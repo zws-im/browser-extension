@@ -3,7 +3,7 @@
   "bugs": {
     "url": "https://github.com/zws-im/zws-chrome/issues"
   },
-  "description": "ZWS Chrome extension",
+  "description": "Zero Width Shortener Chrome extension",
   "devDependencies": {
     "@dice-discord/eslint-config": "^3.0.0",
     "eslint": "^6.1.0",
