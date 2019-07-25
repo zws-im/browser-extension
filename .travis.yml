@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "lts/*"
+before_install:
+  - curl -L https://unpkg.com/@pnpm/self-installer | node
+install:
+  - pnpm install
+jobs:
+  include:
+    - name: "Lint"
+      script: pnpm run lint
