@@ -12,6 +12,10 @@
     }
   },
   "description": "Shortens URLs using spaces that have zero width, making them invisible to humans.",
+  "developer": {
+    "name": "Jonah Snider",
+    "url": "https://jonahsnider.ninja"
+  },
   "homepage_url": "https://zws.im",
   "icons": {
     "512": "images/logo-512.png"
