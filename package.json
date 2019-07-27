@@ -1,9 +1,9 @@
 {
   "author": "Jonah Snider <me@jonahsnider.ninja> (jonahsnider.ninja)",
   "bugs": {
-    "url": "https://github.com/zws-im/zws-chrome/issues"
+    "url": "https://github.com/zws-im/zws-browser/issues"
   },
-  "description": "Zero Width Shortener Chrome extension",
+  "description": "Zero Width Shortener browser extension",
   "devDependencies": {
     "@dice-discord/eslint-config": "^3.0.0",
     "eslint": "^6.1.0",
@@ -23,15 +23,15 @@
   ],
   "license": "Apache-2.0",
   "main": "./src/index.js",
-  "name": "zero-width-shortener-chrome",
+  "name": "zero-width-shortener-browser",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zws-im/zws-chrome.git"
+    "url": "git+https://github.com/zws-im/zws-browser.git"
   },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
-  "version": "1.0.0"
+  "version": "1.1.0"
 }
