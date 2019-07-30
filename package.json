@@ -6,6 +6,7 @@
   "description": "Zero Width Shortener browser extension",
   "devDependencies": {
     "@dice-discord/eslint-config": "^3.0.0",
+    "addons-linter": "^1.11.1",
     "chrome-webstore-upload-cli": "^1.2.0",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
@@ -31,8 +32,8 @@
     "url": "git+https://github.com/zws-im/zws-browser.git"
   },
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint .; addons-linter src/gecko",
+    "lint:fix": "eslint . --fix; addons-linter src/gecko",
     "pack": "npm run pack:prep; npm run pack:gecko; npm run pack:chromium",
     "pack:chromium": "cd src/chromium; zip ../../build/chromium.zip ./*",
     "pack:gecko": "cd src/gecko; zip ../../build/gecko.zip ./*",
