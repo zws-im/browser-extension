@@ -1,7 +1,6 @@
-/* global chrome */
+/* global browser */
 
 const apiURL = "https://us-central1-zero-width-shortener.cloudfunctions.net";
-const api = chrome || browser;
 
 /**
  * Wait a number of milliseconds
@@ -34,10 +33,10 @@ const legacyCopy = str => {
  * @param {Object} tab Current tab being used by the user
  * @property {string} tab.url Current URL the tab is on
  */
-api.browserAction.onClicked.addListener(async tab => {
+browser.browserAction.onClicked.addListener(async tab => {
   // Our loading indicator
-  api.browserAction.setBadgeText({ text: "..." });
-  api.browserAction.setBadgeBackgroundColor({ color: "#2196f3" });
+  browser.browserAction.setBadgeText({ text: "..." });
+  browser.browserAction.setBadgeBackgroundColor({ color: "#2196f3" });
 
   const { url } = tab;
 
@@ -61,19 +60,19 @@ api.browserAction.onClicked.addListener(async tab => {
           legacyCopy(shortenedURL);
         }
 
-        api.browserAction.setBadgeText({ text: "Done" });
-        api.browserAction.setBadgeBackgroundColor({ color: "#4caf50" });
+        browser.browserAction.setBadgeText({ text: "Done" });
+        browser.browserAction.setBadgeBackgroundColor({ color: "#4caf50" });
       });
   } catch (error) {
     console.error(error);
 
-    api.browserAction.setBadgeText({ text: "Error" });
-    api.browserAction.setBadgeBackgroundColor({ color: "#f44336" });
+    browser.browserAction.setBadgeText({ text: "Error" });
+    browser.browserAction.setBadgeBackgroundColor({ color: "#f44336" });
   } finally {
     // Wait a bit for the user to see the status
     await wait(3000);
 
     // An empty string will hide the badge
-    api.browserAction.setBadgeText({ text: "" });
+    browser.browserAction.setBadgeText({ text: "" });
   }
 });
