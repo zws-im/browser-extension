@@ -7,5 +7,11 @@ install:
   - pnpm install
 jobs:
   include:
-    - name: "Lint"
+    - stage: "Tests"
+      name: "Lint"
       script: pnpm run lint
+deploy:
+  - provider: script
+    script: npm run pack; npm run publish
+    on:
+      branch: master

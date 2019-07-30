@@ -6,6 +6,7 @@
   "description": "Zero Width Shortener browser extension",
   "devDependencies": {
     "@dice-discord/eslint-config": "^3.0.0",
+    "chrome-webstore-upload-cli": "^1.2.0",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
@@ -32,10 +33,13 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "pack:prep": "rm -rf build; mkdir build",
     "pack": "npm run pack:prep; npm run pack:gecko; npm run pack:chromium",
+    "pack:chromium": "cd src/chromium; zip ../../build/chromium.zip ./*",
     "pack:gecko": "cd src/gecko; zip ../../build/gecko.zip ./*",
-    "pack:chromium": "cd src/chromium; zip ../../build/chromium.zip ./*"
+    "pack:prep": "rm -rf build; mkdir build",
+    "publish:chromium": "webstore upload --source build/chromium.zip --extension-id $EXTENSION_ID --client-id $CLIENT_ID --client-secret $CLIENT_SECRET --refresh-token $REFRESH_TOKEN",
+    "publish": "npm run publish:chromium",
+    "release": "npm run pack; npm run publish"
   },
   "version": "1.0.0"
 }
