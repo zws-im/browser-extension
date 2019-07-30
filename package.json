@@ -38,7 +38,7 @@
     "pack:chromium": "cd src/chromium; zip ../../build/chromium.zip ./*",
     "pack:gecko": "cd src/gecko; zip ../../build/gecko.zip ./*",
     "pack:prep": "rm -rf build; mkdir build",
-    "publish:chromium": "pnpx chrome-webstore-upload-cli upload --source build/chromium.zip --extension-id $EXTENSION_ID --client-id $CLIENT_ID --client-secret $CLIENT_SECRET --refresh-token $REFRESH_TOKEN",
+    "publish:chromium": "pnpx webstore upload --source build/chromium.zip --extension-id $EXTENSION_ID --client-id $CLIENT_ID --client-secret $CLIENT_SECRET --refresh-token $REFRESH_TOKEN --auto-publish",
     "publish": "npm run publish:chromium",
     "release": "npm run pack; npm run publish"
   },

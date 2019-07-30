@@ -5,6 +5,7 @@ before_install:
   - curl -L https://unpkg.com/@pnpm/self-installer | node
 install:
   - pnpm install -D
+  - pnpm install -g chrome-webstore-upload-cli
 jobs:
   include:
     - stage: "Tests"
@@ -12,6 +13,6 @@ jobs:
       script: pnpm run lint
 deploy:
   - provider: script
-    script: npm run pack; npm run publish
+    script: npm run pack; npm run publish;
     on:
       branch: master
