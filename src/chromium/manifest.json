@@ -8,6 +8,7 @@
   },
   "browser_action": {
     "default_icon": {
+      "40": "images/logo-type-round-40.png",
       "192": "images/logo-type-round-192.png"
     }
   },
@@ -24,5 +25,5 @@
     "activeTab"
   ],
   "short_name": "ZWS",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }

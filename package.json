@@ -31,7 +31,11 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "pack:prep": "rm -rf build; mkdir build",
+    "pack": "npm run pack:prep; npm run pack:gecko; npm run pack:chromium",
+    "pack:gecko": "cd src/gecko; zip ../../build/gecko.zip ./*",
+    "pack:chromium": "cd src/chromium; zip ../../build/chromium.zip ./*"
   },
-  "version": "1.1.0"
+  "version": "1.0.0"
 }
