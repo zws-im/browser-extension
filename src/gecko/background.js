@@ -36,7 +36,7 @@ const legacyCopy = str => {
 browser.browserAction.onClicked.addListener(async tab => {
   // Our loading indicator
   browser.browserAction.setBadgeText({ text: "..." });
-  browser.browserAction.setBadgeBackgroundColor({ color: "#2196f3" });
+  browser.browserAction.setBadgeBackgroundColor({ color: "#808080" });
 
   const { url } = tab;
 
