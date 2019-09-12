@@ -8,13 +8,13 @@
   },
   "browser_action": {
     "default_icon": {
-      "192": "images/logo-type-round-192.png"
+      "192": "./images/logo-type-round-192.png"
     }
   },
   "description": "Shortens URLs using spaces that have zero width, making them invisible to humans.",
   "homepage_url": "https://zws.im",
   "icons": {
-    "512": "images/logo-512.png"
+    "512": "./images/logo-512.png"
   },
   "manifest_version": 2,
   "minimum_chrome_version": "42",
@@ -24,5 +24,5 @@
     "activeTab"
   ],
   "short_name": "ZWS",
-  "version": "1.0.4"
+  "version": "1.0.5"
 }
